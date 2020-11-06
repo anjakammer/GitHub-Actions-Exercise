@@ -36,18 +36,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Add SHORT_SHA env property with commit short sha
-        run:  echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
-
       - name: Build and Publish head Docker image
         uses: VaultVulp/gp-docker-action@1.1.7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           image-name: my-app
-          image-tag: ${{ env.SHORT_SHA }}
+          image-tag: ${{ github.event.pull_request.head.sha }}
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@master
         with:
-          message: "successfully build image:  docker.pkg.github.com/${{ github.event.repository.full_name }}/my-app/${{ env.SHORT_SHA }}"
+          message: "successfully build image:  docker.pkg.github.com/${{ github.event.repository.full_name }}/my-app/${{ github.event.pull_request.head.sha }}"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
