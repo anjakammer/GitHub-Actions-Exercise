@@ -20,4 +20,4 @@ docker build . -t my-app
 docker run -p 8080:8080 my-app
 ```
 
-<img src="https://unsplash.com/photos/Dium8pt7nZY" width="200px">
+![WallE](https://images.unsplash.com/photo-1589254065408-24b23ba67800?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)
