@@ -19,3 +19,4 @@ docker build . -t my-app
 ```bash
 docker run -p 8080:8080 my-app
 ```
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
