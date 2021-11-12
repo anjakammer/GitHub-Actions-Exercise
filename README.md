@@ -1,6 +1,6 @@
 # GitHub Actions Exercise
 
-An exercise for 'DevOps and SRE' on HTW Berlin
+An exercise for 'DevOps and SRE' on HTW Berlin.
 
 ## Test
 
